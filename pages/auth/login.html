@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CarRental</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font-assets/lucide.css" rel="stylesheet">
+    <style>
+        .login-card {
+            transition: all 0.3s ease;
+        }
+        
+        .login-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground min-h-screen flex flex-col">
+    <div class="container flex h-16 items-center justify-between animate-fade-in" style="animation-delay: 0.2s;">
+        <a href="/" class="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>Back to Home</span>
+        </a>
+        <button 
+            id="theme-toggle" 
+            class="rounded-md p-2 hover:bg-accent transition-colors duration-200 relative w-10 h-10 flex items-center justify-center"
+            aria-label="Toggle theme"
+            title="Toggle between dark and light mode"
+        >
+            <span class="sr-only">Toggle theme mode</span>
+            <svg class="h-5 w-5 light-icon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="5"/>
+                <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="h-5 w-5 dark-icon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+        </button>
+    </div>
+
+    <main class="flex-1 flex items-center justify-center p-4 animate-fade-in" style="animation-delay: 0.3s;">
+        <div class="w-full max-w-md">
+            <div class="flex flex-col items-center text-center space-y-2 mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+                <a href="/" class="flex items-center gap-2 font-bold text-2xl group">
+                    <!-- Modern CarRental logo with badge design -->
+                    <div class="relative transform hover:scale-110 transition-transform">
+                        <svg class="h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="28" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+                            <path d="M18 38h28a3 3 0 003-3v-2a3 3 0 00-3-3h-2l-3-10a4 4 0 00-4-3H27a4 4 0 00-4 3l-3 10h-2a3 3 0 00-3 3v2a3 3 0 003 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M18 33v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M46 33v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="38" r="3" fill="currentColor"/>
+                            <circle cx="40" cy="38" r="3" fill="currentColor"/>
+                            <path d="M22 30h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <div class="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-primary animate-pulse">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="brand-text text-foreground">CarRental</span>
+                </a>
+                <h1 class="text-2xl font-bold mt-6 animate-fade-in" style="animation-delay: 0.5s;">
+                    Admin & Vendor Portal
+                </h1>
+                <p class="text-muted-foreground animate-fade-in" style="animation-delay: 0.6s;">
+                    Sign in to manage your account
+                </p>
+            </div>
+
+            <div id="error-message" class="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-lg text-sm hidden">
+                Invalid email or password. Please try again.
+            </div>
+
+            <div class="feature-card shadow-lg overflow-hidden login-card">
+                <div class="p-4 border-b">
+                    <div class="grid w-full grid-cols-2">
+                        <button id="admin-tab" class="tab active flex items-center justify-center gap-2 py-2 rounded-l-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                <circle cx="12" cy="8" r="5"/>
+                                <path d="M20 21a8 8 0 0 0-16 0"/>
+                                <path d="M15 9.3a4 4 0 0 1 0 5.4"/>
+                            </svg>
+                            Admin
+                        </button>
+                        <button id="vendor-tab" class="tab flex items-center justify-center gap-2 py-2 rounded-r-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                                <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"/>
+                                <path d="M1 21h22"/>
+                                <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"/>
+                            </svg>
+                            Vendor
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6 animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <label for="email" class="text-sm font-medium text-foreground">
+                                Email Address
+                            </label>
+                            <input id="email" type="email" placeholder="Enter your email" class="w-full p-2 rounded-md border border-input bg-background transition-all duration-300 hover:border-primary focus:border-primary focus:outline-none" />
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <label for="password" class="text-sm font-medium text-foreground">
+                                    Password
+                                </label>
+                                <a href="/auth/forgot-password" class="text-xs text-primary hover:text-primary/80 transition-colors duration-300">
+                                    Forgot password?
+                                </a>
+                            </div>
+                            <input id="password" type="password" placeholder="Enter your password" class="w-full p-2 rounded-md border border-input bg-background transition-all duration-300 hover:border-primary focus:border-primary focus:outline-none" />
+                        </div>
+                        <button id="login-button" class="btn-gradient inline-flex items-center justify-center w-full rounded-full px-8 py-3 font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                            <span>Login as Admin</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-6 animate-fade-in" style="animation-delay: 0.6s;">
+                <p id="role-info" class="text-sm text-muted-foreground">
+                    Admin access is restricted. Please contact system administrator for assistance.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div class="container py-4 text-center text-xs text-muted-foreground animate-fade-in" style="animation-delay: 0.7s;">
+        CarRental Management System © 2025
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const adminTab = document.getElementById('admin-tab');
+            const vendorTab = document.getElementById('vendor-tab');
+            const loginButton = document.getElementById('login-button');
+            const roleInfo = document.getElementById('role-info');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const errorMessage = document.getElementById('error-message');
+            
+            let userRole = 'admin';
+            
+            const updateUI = () => {
+                if (userRole === 'admin') {
+                    adminTab.classList.add('active');
+                    vendorTab.classList.remove('active');
+                    loginButton.innerHTML = '<span>Login as Admin</span>';
+                    roleInfo.textContent = 'Admin access is restricted. Please contact system administrator for assistance.';
+                } else {
+                    adminTab.classList.remove('active');
+                    vendorTab.classList.add('active');
+                    loginButton.innerHTML = '<span>Login as Vendor</span>';
+                    roleInfo.textContent = 'For vendor access issues, please contact your account administrator.';
+                }
+            };
+            
+            adminTab.addEventListener('click', () => {
+                userRole = 'admin';
+                updateUI();
+            });
+            
+            vendorTab.addEventListener('click', () => {
+                userRole = 'vendor';
+                updateUI();
+            });
+            
+            loginButton.addEventListener('click', () => {
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();
+                
+                if (!email || !password) return;
+                
+                // Show loading state
+                loginButton.disabled = true;
+                loginButton.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <div class="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin"></div>
+                        <span>Logging in...</span>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    if (userRole === 'vendor') {
+                        // Mock vendor login
+                        localStorage.setItem('token', 'mock-vendor-token');
+                        localStorage.setItem('userRole', 'vendor');
+                        window.location.href = '/vendor';
+                    } else {
+                        // Mock admin login with validation
+                        if (email === 'admin@example.com' && password === 'admin123') {
+                            localStorage.setItem('token', 'mock-admin-token');
+                            localStorage.setItem('userRole', 'admin');
+                            window.location.href = '/admin';
+                        } else {
+                            errorMessage.classList.remove('hidden');
+                            loginButton.disabled = false;
+                            loginButton.innerHTML = '<span>Login as Admin</span>';
+                        }
+                    }
+                }, 1000);
+            });
+            
+            // Initialize theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            const lightIcon = themeToggle.querySelector('.light-icon');
+            const darkIcon = themeToggle.querySelector('.dark-icon');
+            
+            const updateThemeIcons = (isDark) => {
+                if (isDark) {
+                    lightIcon.style.opacity = '0';
+                    darkIcon.style.opacity = '1';
+                } else {
+                    lightIcon.style.opacity = '1';
+                    darkIcon.style.opacity = '0';
+                }
+            };
+            
+            // Apply initial theme from localStorage or system preference
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            html.setAttribute('data-theme', initialTheme);
+            updateThemeIcons(initialTheme === 'dark');
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcons(newTheme === 'dark');
+            });
+        });
+    </script>
+</body>
+</html>

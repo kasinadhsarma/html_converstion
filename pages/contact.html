@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CarRental</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font-assets/lucide.css" rel="stylesheet">
+</head>
+<body class="bg-background text-foreground flex min-h-screen flex-col">
+    <!-- Header will be dynamically loaded -->
+    <div id="header"></div>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section class="w-full py-12 md:py-24 bg-muted/50 relative">
+            <div class="grid-pattern"></div>
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                    <div class="space-y-2">
+                        <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl" data-animate data-animation="fadeInUp">Get in Touch</h1>
+                        <p class="max-w-[600px] text-muted-foreground md:text-xl/relaxed" data-animate data-animation="fadeInUp" data-delay="100">
+                            We'd love to hear from you. Our friendly team is always here to help.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="w-full py-12 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-8" data-animate>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+                            <p class="text-muted-foreground mb-6">
+                                Feel free to reach out to us through any of these channels. We're here to help!
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-6" data-stagger data-stagger-delay="100">
+                            <div class="feature-card p-6 flex items-start gap-4" data-stagger-child data-animate>
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-primary">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Our Location</h3>
+                                    <p class="text-muted-foreground mt-1">123 Main Street, Anytown, USA 12345</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-card p-6 flex items-start gap-4" data-stagger-child data-animate>
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-primary">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Phone</h3>
+                                    <p class="text-muted-foreground mt-1">+1 (555) 123-4567</p>
+                                    <p class="text-muted-foreground">+1 (555) 765-4321</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-card p-6 flex items-start gap-4" data-stagger-child data-animate>
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-primary">
+                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Email</h3>
+                                    <p class="text-muted-foreground mt-1">info@carrental.com</p>
+                                    <p class="text-muted-foreground">support@carrental.com</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-card p-6 flex items-start gap-4" data-stagger-child data-animate>
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-primary">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Business Hours</h3>
+                                    <p class="text-muted-foreground mt-1">Monday - Friday: 8:00 AM - 8:00 PM</p>
+                                    <p class="text-muted-foreground">Saturday - Sunday: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-animate data-animation="fadeInRight" data-delay="300">
+                        <div class="feature-card border-primary/10 shadow-lg">
+                            <div class="p-6 border-b">
+                                <h3 class="text-xl font-bold">Send Us a Message</h3>
+                                <p class="text-muted-foreground mt-2">
+                                    Fill out the form below and we'll get back to you as soon as possible.
+                                </p>
+                            </div>
+                            <div class="p-6">
+                                <form class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="space-y-2">
+                                            <label for="name" class="text-sm font-medium">
+                                                Full Name
+                                            </label>
+                                            <input id="name" placeholder="John Doe" class="w-full p-2 rounded-md border border-input bg-background" />
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label for="email" class="text-sm font-medium">
+                                                Email
+                                            </label>
+                                            <input id="email" type="email" placeholder="john.doe@example.com" class="w-full p-2 rounded-md border border-input bg-background" />
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="phone" class="text-sm font-medium">
+                                            Phone Number
+                                        </label>
+                                        <input id="phone" placeholder="+1 (555) 123-4567" class="w-full p-2 rounded-md border border-input bg-background" />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="subject" class="text-sm font-medium">
+                                            Subject
+                                        </label>
+                                        <input id="subject" placeholder="How can we help you?" class="w-full p-2 rounded-md border border-input bg-background" />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="message" class="text-sm font-medium">
+                                            Message
+                                        </label>
+                                        <textarea id="message" placeholder="Your message here..." rows="5" class="w-full p-2 rounded-md border border-input bg-background"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn-gradient inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-4 w-4">
+                                            <path d="m22 2-7 20-4-9-9-4Z"></path>
+                                            <path d="M22 2 11 13"></path>
+                                        </svg>
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="w-full py-12 md:py-24 bg-muted/10" data-animate>
+            <div class="container px-4 md:px-6">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl" data-animate data-animation="fadeInUp">Our Location</h2>
+                        <p class="max-w-[600px] text-muted-foreground" data-animate data-animation="fadeInUp" data-delay="100">
+                            Visit us at our main office or one of our many locations across the city
+                        </p>
+                    </div>
+                </div>
+                <div class="aspect-[16/9] w-full rounded-xl overflow-hidden border shadow-lg image-container" data-animate data-animation="fadeInScale" data-delay="300">
+                    <div class="image-shadow"></div>
+                    <img
+                        src="/placeholder.svg?height=600&width=1200"
+                        alt="Map location"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="w-full py-12 md:py-24 bg-muted/50" data-animate>
+            <div class="container px-4 md:px-6">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl" data-animate data-animation="fadeInUp">Frequently Asked Questions</h2>
+                        <p class="max-w-[600px] text-muted-foreground" data-animate data-animation="fadeInUp" data-delay="100">
+                            Find quick answers to common questions about our services
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto features-grid" data-stagger data-stagger-delay="100">
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-bold">What documents do I need to rent a car?</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-muted-foreground">You'll need a valid driver's license, a credit card in your name, and proof of insurance. International customers may need additional documentation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-bold">Can I modify or cancel my reservation?</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-muted-foreground">Yes, you can modify or cancel your reservation up to 24 hours before your scheduled pickup time without any penalty.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-bold">Is there a security deposit required?</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-muted-foreground">Yes, we require a security deposit that varies based on the vehicle type. The deposit is fully refundable upon return of the vehicle in its original condition.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="p-6 border-b">
+                            <h3 class="text-xl font-bold">Do you offer airport pickup and drop-off?</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-muted-foreground">Yes, we offer convenient airport pickup and drop-off services at all major airports in our service areas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section w-full py-12 md:py-24 relative overflow-hidden" data-animate>
+            <div class="cta-pattern"></div>
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-primary-foreground" data-animate data-animation="fadeInUp">Ready to Get Started?</h2>
+                        <p class="max-w-[900px] md:text-xl/relaxed text-primary-foreground/90" data-animate data-animation="fadeInUp" data-delay="100">
+                            Contact us today or browse our selection of premium rental vehicles
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-6" data-animate data-animation="fadeInUp" data-delay="200">
+                        <a href="/cars" class="btn btn-secondary btn-gradient inline-flex items-center justify-center rounded-full px-8 py-3 font-medium bg-background text-primary hover:bg-background/90 transition-all duration-300 shadow-lg shadow-primary-foreground/10 group">
+                            Browse Cars
+                            <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="btn btn-outline inline-flex items-center justify-center rounded-full px-8 py-3 font-medium bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 transition-all duration-300 group">
+                            Call Now
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be dynamically loaded -->
+    <div id="footer"></div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+    <script>
+        // Load header and footer
+        fetch('/pages/components/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+                
+                // Initialize theme toggle
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    const lightIcon = themeToggle.querySelector('.light-icon');
+                    const darkIcon = themeToggle.querySelector('.dark-icon');
+                    
+                    // Update icon visibility based on current theme
+                    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                        lightIcon.style.opacity = '0';
+                        darkIcon.style.opacity = '1';
+                    } else {
+                        lightIcon.style.opacity = '1';
+                        darkIcon.style.opacity = '0';
+                    }
+                }
+            });
+        
+        fetch('/pages/components/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+</body>
+</html>

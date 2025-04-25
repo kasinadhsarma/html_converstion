@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CarRental</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/landing.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font-assets/lucide.css" rel="stylesheet">
+</head>
+<body class="bg-background text-foreground flex min-h-screen flex-col">
+    <!-- Header will be dynamically loaded -->
+    <div id="header"></div>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section class="hero-section w-full py-12 md:py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-primary/5 via-primary/3 to-muted/50">
+            <div class="grid-pattern"></div>
+            <div class="blob-gradient"></div>
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+                    <div class="space-y-4" data-animate data-animation="fadeInLeft">
+                        <div class="inline-block">
+                            <span class="rounded-full px-4 py-1 text-sm border border-primary/20 inline-flex items-center bg-primary/5 text-primary font-medium shadow-sm">
+                                About Us
+                            </span>
+                        </div>
+                        <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl" data-typing data-typing-speed="40">
+                            Driving Excellence Since <span class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">2010</span>
+                        </h1>
+                        <p class="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
+                            We're more than just a car rental service. We're your partner in creating memorable journeys with
+                            premium vehicles and exceptional service.
+                        </p>
+                    </div>
+                    <div class="flex justify-center" data-animate data-animation="fadeInScale" data-delay="200">
+                        <div class="image-container relative w-full max-w-[500px] aspect-video">
+                            <div class="image-shadow"></div>
+                            <div class="relative rounded-xl overflow-hidden shadow-2xl border border-primary/10">
+                                <img
+                                    src="/placeholder.svg?height=400&width=600"
+                                    alt="Our team"
+                                    class="object-cover w-full h-full bg-muted"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section class="w-full py-12 md:py-24" data-animate>
+            <div class="container px-4 md:px-6">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">Our Story</h2>
+                        <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                            From humble beginnings to becoming a leading car rental service
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 features-grid" data-stagger data-stagger-delay="100">
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary icon-spin-hover">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4">Our Beginning</h3>
+                        <p class="text-muted-foreground mt-2">
+                            Founded in 2010 with just 5 cars, we started with a simple mission: to provide quality vehicles with
+                            exceptional service.
+                        </p>
+                    </div>
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary icon-spin-hover">
+                                <path d="M7 17h10v-4H7v4zm12-4h-1v4h1a1 1 0 001-1v-2a1 1 0 00-1-1zM5 17v-4H4a1 1 0 00-1 1v2a1 1 0 001 1h1z"/>
+                                <path d="M17 11H7l-1.5-5h13L17 11z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4">Growth & Expansion</h3>
+                        <p class="text-muted-foreground mt-2">
+                            By 2015, our fleet had grown to over 100 vehicles, and we expanded to multiple locations across the
+                            country.
+                        </p>
+                    </div>
+                    <div class="feature-card" data-stagger-child data-animate>
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-primary icon-spin-hover">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4">Today</h3>
+                        <p class="text-muted-foreground mt-2">
+                            Now with over 500 premium vehicles and 20 locations, we're proud to be the top-rated car rental
+                            service in the region.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="w-full py-12 md:py-24 bg-gradient-to-br from-muted/50 to-background relative overflow-hidden" data-animate>
+            <div class="grid-pattern"></div>
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">Our Values</h2>
+                        <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                            The principles that guide everything we do
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger data-stagger-delay="100">
+                    <div class="feature-card flex flex-col items-center text-center p-6 space-y-4 rounded-xl bg-background" data-stagger-child data-animate>
+                        <div class="p-2 rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary icon-spin-hover">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Safety</h3>
+                        <p class="text-muted-foreground">Your safety is our top priority. All our vehicles undergo rigorous safety inspections.</p>
+                    </div>
+                    <div class="feature-card flex flex-col items-center text-center p-6 space-y-4 rounded-xl bg-background" data-stagger-child data-animate>
+                        <div class="p-2 rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary icon-spin-hover">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Quality</h3>
+                        <p class="text-muted-foreground">We offer only premium vehicles that are meticulously maintained to high standards.</p>
+                    </div>
+                    <div class="feature-card flex flex-col items-center text-center p-6 space-y-4 rounded-xl bg-background" data-stagger-child data-animate>
+                        <div class="p-2 rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary icon-spin-hover">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Customer Focus</h3>
+                        <p class="text-muted-foreground">We're dedicated to providing exceptional service that exceeds your expectations.</p>
+                    </div>
+                    <div class="feature-card flex flex-col items-center text-center p-6 space-y-4 rounded-xl bg-background" data-stagger-child data-animate>
+                        <div class="p-2 rounded-full bg-primary/10 feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary icon-spin-hover">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Reliability</h3>
+                        <p class="text-muted-foreground">Count on us for punctual service and vehicles that perform flawlessly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="w-full py-12 md:py-24" data-animate>
+            <div class="container px-4 md:px-6">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">Meet Our Team</h2>
+                        <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+                            The dedicated professionals behind our success
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger data-stagger-delay="100">
+                    <div class="flex flex-col items-center text-center space-y-4 feature-card p-6" data-stagger-child data-animate>
+                        <div class="relative w-40 h-40 rounded-full overflow-hidden image-container">
+                            <div class="image-shadow rounded-full"></div>
+                            <img
+                                src="/placeholder.svg?height=300&width=300"
+                                alt="Alex Johnson"
+                                class="object-cover w-full h-full bg-muted rounded-full border border-primary/10"
+                            />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Alex Johnson</h3>
+                            <p class="text-muted-foreground">CEO & Founder</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-4 feature-card p-6" data-stagger-child data-animate>
+                        <div class="relative w-40 h-40 rounded-full overflow-hidden image-container">
+                            <div class="image-shadow rounded-full"></div>
+                            <img
+                                src="/placeholder.svg?height=300&width=300"
+                                alt="Sarah Williams"
+                                class="object-cover w-full h-full bg-muted rounded-full border border-primary/10"
+                            />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Sarah Williams</h3>
+                            <p class="text-muted-foreground">Operations Director</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-4 feature-card p-6" data-stagger-child data-animate>
+                        <div class="relative w-40 h-40 rounded-full overflow-hidden image-container">
+                            <div class="image-shadow rounded-full"></div>
+                            <img
+                                src="/placeholder.svg?height=300&width=300"
+                                alt="Michael Chen"
+                                class="object-cover w-full h-full bg-muted rounded-full border border-primary/10"
+                            />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Michael Chen</h3>
+                            <p class="text-muted-foreground">Fleet Manager</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center space-y-4 feature-card p-6" data-stagger-child data-animate>
+                        <div class="relative w-40 h-40 rounded-full overflow-hidden image-container">
+                            <div class="image-shadow rounded-full"></div>
+                            <img
+                                src="/placeholder.svg?height=300&width=300"
+                                alt="Emily Rodriguez"
+                                class="object-cover w-full h-full bg-muted rounded-full border border-primary/10"
+                            />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Emily Rodriguez</h3>
+                            <p class="text-muted-foreground">Customer Experience Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section w-full py-12 md:py-24 relative overflow-hidden" data-animate>
+            <div class="cta-pattern"></div>
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                    <div class="space-y-2"></div>
+                        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-primary-foreground" data-animate data-animation="fadeInUp">Ready to Experience the Difference?</h2>
+                        <p class="max-w-[900px] md:text-xl/relaxed text-primary-foreground/90" data-animate data-animation="fadeInUp" data-delay="100">
+                            Join thousands of satisfied customers who trust us for their car rental needs
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-6" data-animate data-animation="fadeInUp" data-delay="200">
+                        <a href="/cars" class="btn btn-secondary btn-gradient inline-flex items-center justify-center rounded-full px-8 py-3 font-medium bg-background text-primary hover:bg-background/90 transition-all duration-300 shadow-lg shadow-primary-foreground/10 group">
+                            Browse Cars
+                            <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </a>
+                        <a href="/contact" class="btn btn-outline inline-flex items-center justify-center rounded-full px-8 py-3 font-medium bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 transition-all duration-300 group">
+                            Contact Us
+                            <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be dynamically loaded -->
+    <div id="footer"></div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/animations.js"></script>
+    <script>
+        // Load header and footer
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(html => {
+                // Load the header
+                document.getElementById('header').innerHTML = html;
+                
+                // Initialize theme toggle
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    const lightIcon = themeToggle.querySelector('.light-icon');
+                    const darkIcon = themeToggle.querySelector('.dark-icon');
+                    
+                    // Update icon visibility based on current theme
+                    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                        lightIcon.style.opacity = '0';
+                        darkIcon.style.opacity = '1';
+                    } else {
+                        lightIcon.style.opacity = '1';
+                        darkIcon.style.opacity = '0';
+                    }
+                }
+
+                // Ensure navigation links are correct in the header
+                const nav = document.querySelector('nav');
+                if (nav) {
+                    // Clear existing links
+                    nav.innerHTML = '';
+                    
+                    // Add About link
+                    const aboutLink = document.createElement('a');
+                    aboutLink.href = '/pages/about.html';
+                    aboutLink.className = 'text-sm font-medium hover:text-primary transition-colors';
+                    aboutLink.textContent = 'About';
+                    nav.appendChild(aboutLink);
+                    
+                    // Add Contact link
+                    const contactLink = document.createElement('a');
+                    contactLink.href = '/contact';
+                    contactLink.className = 'text-sm font-medium hover:text-primary transition-colors';
+                    contactLink.textContent = 'Contact';
+                    nav.appendChild(contactLink);
+                }
+                
+                // Ensure login button exists
+                const rightButtons = document.querySelector('header .flex.items-center.gap-4');
+                if (rightButtons) {
+                    // Check if login button exists
+                    let loginButton = rightButtons.querySelector('a[href="/auth/login"]');
+                    if (!loginButton) {
+                        // Create login button if it doesn't exist
+                        loginButton = document.createElement('a');
+                        loginButton.href = '/auth/login';
+                        loginButton.className = 'hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-md h-10 px-4 py-2';
+                        loginButton.innerHTML = `
+                            <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+                            </svg>
+                            Login
+                        `;
+                        
+                        // Find the theme toggle and insert login button after it
+                        const themeToggle = rightButtons.querySelector('#theme-toggle');
+                        if (themeToggle) {
+                            themeToggle.after(loginButton);
+                        } else {
+                            rightButtons.appendChild(loginButton);
+                        }
+                    }
+                }
+            });
+        
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+</body>
+</html>
