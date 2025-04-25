@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - CarRental</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/landing.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font-assets/lucide.css" rel="stylesheet">
 </head>
 <body class="bg-background text-foreground flex min-h-screen flex-col">
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">Skip to content</a>
+    
     <!-- Header will be dynamically loaded -->
     <div id="header"></div>
 
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
         <!-- Hero Section -->
         <section class="w-full py-12 md:py-24 bg-muted/50 relative">
             <div class="grid-pattern"></div>
@@ -261,35 +263,8 @@
     <!-- Footer will be dynamically loaded -->
     <div id="footer"></div>
 
-    <script src="../js/theme.js"></script>
-    <script src="../js/animations.js"></script>
-    <script>
-        // Load header and footer
-        fetch('/pages/components/header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header').innerHTML = html;
-                
-                // Initialize theme toggle
-                const themeToggle = document.getElementById('theme-toggle');
-                if (themeToggle) {
-                    const lightIcon = themeToggle.querySelector('.light-icon');
-                    const darkIcon = themeToggle.querySelector('.dark-icon');
-                    
-                    // Update icon visibility based on current theme
-                    if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                        lightIcon.style.opacity = '0';
-                        darkIcon.style.opacity = '1';
-                    } else {
-                        lightIcon.style.opacity = '1';
-                        darkIcon.style.opacity = '0';
-                    }
-                }
-            });
-        
-        fetch('/pages/components/footer.html')
-            .then(response => response.text())
-            .then(html => document.getElementById('footer').innerHTML = html);
-    </script>
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/components-loader.js"></script>
 </body>
 </html>

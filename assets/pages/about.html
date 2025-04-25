@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - CarRental</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/landing.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font-assets/lucide.css" rel="stylesheet">
 </head>
 <body class="bg-background text-foreground flex min-h-screen flex-col">
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">Skip to content</a>
+    
     <!-- Header will be dynamically loaded -->
     <div id="header"></div>
 
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
         <!-- Hero Section -->
         <section class="hero-section w-full py-12 md:py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-primary/5 via-primary/3 to-muted/50">
             <div class="grid-pattern"></div>
@@ -268,84 +270,8 @@
     <!-- Footer will be dynamically loaded -->
     <div id="footer"></div>
 
-    <script src="../js/theme.js"></script>
-    <script src="../js/animations.js"></script>
-    <script>
-        // Load header and footer
-        fetch('../components/header.html')
-            .then(response => response.text())
-            .then(html => {
-                // Load the header
-                document.getElementById('header').innerHTML = html;
-                
-                // Initialize theme toggle
-                const themeToggle = document.getElementById('theme-toggle');
-                if (themeToggle) {
-                    const lightIcon = themeToggle.querySelector('.light-icon');
-                    const darkIcon = themeToggle.querySelector('.dark-icon');
-                    
-                    // Update icon visibility based on current theme
-                    if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                        lightIcon.style.opacity = '0';
-                        darkIcon.style.opacity = '1';
-                    } else {
-                        lightIcon.style.opacity = '1';
-                        darkIcon.style.opacity = '0';
-                    }
-                }
-
-                // Ensure navigation links are correct in the header
-                const nav = document.querySelector('nav');
-                if (nav) {
-                    // Clear existing links
-                    nav.innerHTML = '';
-                    
-                    // Add About link
-                    const aboutLink = document.createElement('a');
-                    aboutLink.href = '/pages/about.html';
-                    aboutLink.className = 'text-sm font-medium hover:text-primary transition-colors';
-                    aboutLink.textContent = 'About';
-                    nav.appendChild(aboutLink);
-                    
-                    // Add Contact link
-                    const contactLink = document.createElement('a');
-                    contactLink.href = '/contact';
-                    contactLink.className = 'text-sm font-medium hover:text-primary transition-colors';
-                    contactLink.textContent = 'Contact';
-                    nav.appendChild(contactLink);
-                }
-                
-                // Ensure login button exists
-                const rightButtons = document.querySelector('header .flex.items-center.gap-4');
-                if (rightButtons) {
-                    // Check if login button exists
-                    let loginButton = rightButtons.querySelector('a[href="/auth/login"]');
-                    if (!loginButton) {
-                        // Create login button if it doesn't exist
-                        loginButton = document.createElement('a');
-                        loginButton.href = '/auth/login';
-                        loginButton.className = 'hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-md h-10 px-4 py-2';
-                        loginButton.innerHTML = `
-                            <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
-                            </svg>
-                            Login
-                        `;
-                        
-                        // Find the theme toggle and insert login button after it
-                        const themeToggle = rightButtons.querySelector('#theme-toggle');
-                        if (themeToggle) {
-                            themeToggle.after(loginButton);
-                        } else {
-                            rightButtons.appendChild(loginButton);
-                        }
-                    }
-                }
-            });
-        
-        fetch('../components/footer.html')
-            .then(response => response.text())
-            .then(html => document.getElementById('footer').innerHTML = html);
-    </script>
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/components-loader.js"></script>
 </body>
 </html>

@@ -4,67 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Rental Management Platform</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.309.0/font-assets/lucide.css" rel="stylesheet">
 </head>
-<body class="bg-background text-foreground">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div class="container flex h-16 items-center justify-between">
-            <a href="/" class="flex items-center gap-2 font-bold text-xl">
-                <!-- Modern CarRental logo with badge design -->
-                <svg class="h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="32" r="28" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
-                    <path d="M18 38h28a3 3 0 003-3v-2a3 3 0 00-3-3h-2l-3-10a4 4 0 00-4-3H27a4 4 0 00-4 3l-3 10h-2a3 3 0 00-3 3v2a3 3 0 003 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M18 33v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M46 33v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <circle cx="24" cy="38" r="3" fill="currentColor"/>
-                    <circle cx="40" cy="38" r="3" fill="currentColor"/>
-                    <path d="M22 30h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-                <span class="brand-text">CarRental</span>
-            </a>
-            <nav class="hidden md:flex gap-6">
-                <a href="/pages/about.html" class="text-sm font-medium hover:text-primary transition-colors">About</a>
-                <a href="/pages/contact.html" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
-            </nav>
-            <div class="flex items-center gap-4">
-                <!-- Theme Toggle with better styling -->
-                <button 
-                    id="theme-toggle" 
-                    class="rounded-md p-2 hover:bg-accent transition-colors duration-200 relative w-10 h-10 flex items-center justify-center"
-                    aria-label="Toggle theme"
-                    title="Toggle between dark and light mode"
-                >
-                    <span class="sr-only">Toggle theme mode</span>
-                    <svg class="h-5 w-5 light-icon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <svg class="h-5 w-5 dark-icon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-                    </svg>
-                </button>
-                <!-- Login button with improved styling -->
-                <a href="/auth/login.html" class="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-md h-10 px-4 py-2">
-                    <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
-                    </svg>
-                    Login
-                </a>
-                <!-- Mobile Nav Toggle with better hover effect -->
-                <button id="mobile-nav-toggle" class="md:hidden rounded-md p-2 hover:bg-accent transition-colors" title="Toggle mobile menu">
-                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
+<body class="bg-background text-foreground flex min-h-screen flex-col">
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">Skip to content</a>
+    
+    <!-- Header will be dynamically loaded -->
+    <div id="header"></div>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content" class="flex-1">
         <!-- Hero Section -->
         <section class="hero-section w-full py-20 md:py-32 relative overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-background">
             <div class="grid-pattern"></div>
@@ -82,7 +34,7 @@
                             A powerful platform for car rental businesses. Manage your fleet, bookings, and customers with ease.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/auth/login" class="btn-gradient inline-flex items-center justify-center rounded-lg px-8 h-12 text-sm font-medium shadow-lg shadow-primary/20 transition-all w-full sm:w-auto">
+                            <a href="/assets/pages/auth/login.html" class="btn-gradient inline-flex items-center justify-center rounded-lg px-8 h-12 text-sm font-medium shadow-lg shadow-primary/20 transition-all w-full sm:w-auto">
                                 Login Now
                                 <svg class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M9 18l6-6-6-6"/>
@@ -280,91 +232,15 @@
                 </div>
             </div>
         </section>
+
     </main>
-
-    <!-- Footer -->
-    <footer class="w-full border-t py-12 bg-background">
-        <div class="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div class="space-y-4">
-                <a href="/" class="flex items-center gap-2 font-bold text-xl">
-                    <!-- Modern CarRental logo with badge design -->
-                    <svg class="h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-                        <circle cx="32" cy="32" r="28" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
-                        <path d="M18 38h28a3 3 0 003-3v-2a3 3 0 00-3-3h-2l-3-10a4 4 0 00-4-3H27a4 4 0 00-4 3l-3 10h-2a3 3 0 00-3 3v2a3 3 0 003 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <path d="M18 33v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M46 33v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="24" cy="38" r="3" fill="currentColor"/>
-                        <circle cx="40" cy="38" r="3" fill="currentColor"/>
-                        <path d="M22 30h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                    <span class="brand-text">CarRental</span>
-                </a>
-                <p class="text-sm text-muted-foreground max-w-xs">
-                    Premium car rental service providing luxury and comfort for your journeys since 2025.
-                </p>
-                <div class="flex gap-4 pt-2">
-                    <a href="#" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h3 class="font-medium text-lg mb-4 text-foreground">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="/cars" class="text-sm text-muted-foreground hover:text-primary transition-colors">Browse Cars</a></li>
-                    <li><a href="/pages/about.html" class="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-                    <li><a href="/contact" class="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
-                    <li><a href="/faq" class="text-sm text-muted-foreground hover:text-primary transition-colors">FAQ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-medium text-lg mb-4 text-foreground">Legal</h3>
-                <ul class="space-y-2">
-                    <li><a href="/terms" class="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a></li>
-                    <li><a href="/privacy" class="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
-                    <li><a href="/cookies" class="text-sm text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-medium text-lg mb-4 text-foreground">Contact Us</h3>
-                <address class="not-italic space-y-2">
-                    <p class="text-sm text-muted-foreground">123 Main Street</p>
-                    <p class="text-sm text-muted-foreground">Anytown, USA 12345</p>
-                    <p class="text-sm text-muted-foreground">
-                        <a href="mailto:info@carrental.com" class="hover:text-primary transition-colors">info@carrental.com</a>
-                    </p>
-                    <p class="text-sm text-muted-foreground">
-                        <a href="tel:+11234567890" class="hover:text-primary transition-colors">(123) 456-7890</a>
-                    </p>
-                </address>
-            </div>
-        </div>
-        <div class="container mt-8 pt-8 border-t">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm text-muted-foreground">&copy; 2025 CarRental. All rights reserved.</p>
-                <p class="text-sm text-muted-foreground mt-4 md:mt-0">
-                    Designed with <span class="text-primary">♥</span> for better journeys
-                </p>
-            </div>
-        </div>
-    </footer>
-
+    
+    <!-- Footer will be dynamically loaded -->
+    <div id="footer"></div>
+     
     <!-- Scripts -->
-    <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/components-loader.js"></script>
 </body>
 </html>

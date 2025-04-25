@@ -1,0 +1,68 @@
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div class="container flex h-16 items-center justify-between">
+        <div class="flex items-center">
+            <!-- Mobile Nav Toggle - Adding this button back -->
+            <button id="mobile-nav-toggle" class="mr-4 md:hidden rounded-md p-2 hover:bg-accent transition-colors" title="Toggle mobile menu">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 font-bold text-xl">
+                <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" fill="none" rx="0" ry="0"></rect>
+                    <path fill="currentColor" d="M12 4a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm-1 3h2v2h-2V7zm0 4h2v6h-2v-6z"></path>
+                </svg>
+                <span>CarRental</span>
+            </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex gap-8">
+            <a href="/assets/pages/about.html" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+            <a href="/assets/pages/contact.html" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <!-- Theme Toggle -->
+            <div class="theme-toggle-wrapper relative">
+                <button 
+                    id="theme-toggle" 
+                    class="rounded-full p-2 hover:bg-accent/50 transition-colors"
+                    aria-label="Toggle theme"
+                >
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <div id="theme-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-background border border-border rounded-md shadow-lg z-50">
+                    <div class="py-1">
+                        <button id="theme-light" class="w-full text-left px-4 py-2 text-sm hover:bg-accent transition-colors">Light</button>
+                        <button id="theme-dark" class="w-full text-left px-4 py-2 text-sm hover:bg-accent transition-colors">Dark</button>
+                        <button id="theme-system" class="w-full text-left px-4 py-2 text-sm hover:bg-accent transition-colors">System</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login button - Making sure it's visible -->
+            <a href="/assets/pages/auth/login.html" class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-primary/90 transition-all">
+                <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                    <polyline points="10 17 15 12 10 7"></polyline>
+                    <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                Login
+            </a>
+        </div>
+    </div>
+</header>
