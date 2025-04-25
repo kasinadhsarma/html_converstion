@@ -6,9 +6,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Components loader initialized");
     
-    // Load components with absolute paths to ensure they're found
+    // Get the base URL for GitHub Pages compatibility
+    const baseUrl = getBaseUrl();
+    console.log("Base URL:", baseUrl);
+    
+    // Load components
     loadHeader();
     loadFooter();
+    
+    /**
+     * Get the base URL for GitHub Pages compatibility
+     * @returns {string} Base URL for the site
+     */
+    function getBaseUrl() {
+        // For GitHub Pages, we need to adjust paths based on the repository name
+        const pathSegments = window.location.pathname.split('/');
+        if (pathSegments[1] === 'html_converstion') {
+            // GitHub Pages deployment
+            return '/html_converstion';
+        } else {
+            // Local development or other deployment
+            return '';
+        }
+    }
     
     /**
      * Load the header component
@@ -20,11 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Use absolute paths to ensure the components are found
+        // Use GitHub Pages compatible paths
         const headerPaths = [
-            '/home/kasinadhsarma/Desktop/html_converstion/assets/pages/components/header.html',
+            `${baseUrl}/assets/pages/components/header.html`,
             'assets/pages/components/header.html',
-            '/assets/pages/components/header.html',
             '../assets/pages/components/header.html',
             '../components/header.html',
             '../../components/header.html',
@@ -33,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loadComponent(headerContainer, headerPaths)
             .then(() => {
                 console.log('Header loaded successfully');
+                // Fix header links for GitHub Pages
+                fixHeaderLinks();
                 initializeThemeToggle();
                 initializeMobileNavigation();
             })
@@ -48,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <path d="M4 6h16M4 12h16M4 18h16"/>
                                 </svg>
                             </button>
-                            <a href="/" class="flex items-center gap-2 font-bold text-xl">
+                            <a href="${baseUrl}/" class="flex items-center gap-2 font-bold text-xl">
                                 <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="8"/>
                                     <path d="M11 8h2v8h-2z"/>
@@ -57,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             </a>
                         </div>
                         <nav class="hidden md:flex gap-8">
-                            <a href="/assets/pages/about.html" class="text-sm font-medium hover:text-primary transition-colors">About</a>
-                            <a href="/assets/pages/contact.html" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+                            <a href="${baseUrl}/assets/pages/about.html" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                            <a href="${baseUrl}/assets/pages/contact.html" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
                         </nav>
                         <div class="flex items-center gap-4">
                             <button id="theme-toggle" class="rounded-full p-2 hover:bg-accent">
@@ -74,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                                 </svg>
                             </button>
-                            <a href="/assets/pages/auth/login.html" class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-primary/90">
+                            <a href="${baseUrl}/assets/pages/auth/login.html" class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-primary/90">
                                 <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
                                     <polyline points="10 17 15 12 10 7"></polyline>
@@ -86,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </header>
                 `;
+                fixHeaderLinks();
                 initializeThemeToggle();
                 initializeMobileNavigation();
             });
@@ -101,11 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Use absolute paths to ensure the components are found
+        // Use GitHub Pages compatible paths
         const footerPaths = [
-            '/home/kasinadhsarma/Desktop/html_converstion/assets/pages/components/footer.html',
+            `${baseUrl}/assets/pages/components/footer.html`,
             'assets/pages/components/footer.html',
-            '/assets/pages/components/footer.html',
             '../assets/pages/components/footer.html',
             '../components/footer.html',
             '../../components/footer.html',
@@ -114,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loadComponent(footerContainer, footerPaths)
             .then(() => {
                 console.log('Footer loaded successfully');
+                // Fix footer links for GitHub Pages
+                fixFooterLinks();
                 // Add click event for footer theme toggle if it exists
                 const footerThemeToggle = document.getElementById('footer-theme-toggle');
                 if (footerThemeToggle) {
@@ -122,13 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error('Failed to load footer:', error);
-                // Create a basic footer matching your screenshot if loading fails
+                // Create a basic footer if loading fails
                 footerContainer.innerHTML = `
                 <footer class="bg-gray-900 text-white py-12">
                     <div class="container px-4 md:px-6">
                         <div class="flex flex-col md:flex-row justify-between items-center">
                             <div class="mb-6 md:mb-0">
-                                <a href="/" class="flex items-center gap-2 font-bold text-xl">
+                                <a href="${baseUrl}/" class="flex items-center gap-2 font-bold text-xl">
                                     <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="24" height="24" fill="none" rx="0" ry="0"></rect>
                                         <path fill="currentColor" d="M12 4a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm-1 3h2v2h-2V7zm0 4h2v6h-2v-6z"></path>
@@ -138,42 +161,24 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p class="mt-2 text-gray-400 text-sm max-w-md">
                                     Premium car rental service providing luxury and comfort for your journeys since 2025.
                                 </p>
-                                <div class="flex mt-4 space-x-4">
-                                    <a href="#" class="text-gray-400 hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                                        </svg>
-                                    </a>
-                                </div>
                             </div>
                             <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
                                 <div>
                                     <h3 class="font-semibold mb-3">About</h3>
                                     <ul class="space-y-2 text-sm">
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Company</a></li>
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Team</a></li>
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                                        <li><a href="${baseUrl}/assets/pages/about.html" class="text-gray-400 hover:text-white">About</a></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h3 class="font-semibold mb-3">Support</h3>
                                     <ul class="space-y-2 text-sm">
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
-                                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                                        <li><a href="${baseUrl}/assets/pages/contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold mb-3">Legal</h3>
+                                    <h3 class="font-semibold mb-3">Account</h3>
                                     <ul class="space-y-2 text-sm">
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
-                                        <li><a href="#" class="text-gray-400 hover:text-white">Cookies</a></li>
+                                        <li><a href="${baseUrl}/assets/pages/auth/login.html" class="text-gray-400 hover:text-white">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -182,6 +187,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 </footer>
                 `;
             });
+    }
+    
+    /**
+     * Fix links in the header for GitHub Pages compatibility
+     */
+    function fixHeaderLinks() {
+        const header = document.querySelector('header');
+        if (!header) return;
+        
+        // Fix all links in the header
+        const links = header.querySelectorAll('a');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('/') && !href.startsWith(baseUrl)) {
+                link.setAttribute('href', `${baseUrl}${href}`);
+            }
+        });
+    }
+    
+    /**
+     * Fix links in the footer for GitHub Pages compatibility
+     */
+    function fixFooterLinks() {
+        const footer = document.querySelector('footer');
+        if (!footer) return;
+        
+        // Fix all links in the footer
+        const links = footer.querySelectorAll('a');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('/') && !href.startsWith(baseUrl)) {
+                link.setAttribute('href', `${baseUrl}${href}`);
+            }
+        });
     }
     
     /**
@@ -316,9 +355,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Try loading the sidenav content
         const sidenavPaths = [
-            '/home/kasinadhsarma/Desktop/html_converstion/assets/pages/components/sidenav.html',
+            `${baseUrl}/assets/pages/components/sidenav.html`,
             'assets/pages/components/sidenav.html',
-            '/assets/pages/components/sidenav.html',
             '../assets/pages/components/sidenav.html',
             '../components/sidenav.html',
             '../../components/sidenav.html',
